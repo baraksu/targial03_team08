@@ -10,7 +10,7 @@ VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
-matan -
-muli -
-eithan - 
-jonathan - 
+matan - methods 1 2
+muli -methods 6 7
+eithan - methods 4 5
+jonathan - method 3 and ifs
