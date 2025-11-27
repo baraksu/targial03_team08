@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class EncryptionTester
 {
-    @Test
+    //@Test
     /*public void testAdd(){
         
         int result = Encryption.add(2,3);
