@@ -71,14 +71,14 @@ public class EncryptionTester
     @Test
     public void testAdd7(){
         
-        int result = Encryption.wordsNum("dfghd dghg");
+        String result = Encryption.newPassword("dfghd dghg",2);
         assertEquals("dghg dfghd",result);
         
     }
     @Test
     public void testAdd8(){
         
-        int result = Encryption.wordsNum("gvjjgv jhvhvj hvhv");
+        String result = Encryption.newPassword("gvjjgv jhvhvj hvhv",3);
         assertEquals("hvhv gvjjgv jhvhvj",result);
         
     }
