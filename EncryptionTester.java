@@ -195,64 +195,64 @@ public class EncryptionTester
      @Test
     public void testAdd24(){
         
-        String result = Encryption.moveSingsRight("eitan didn't help");
-        assertEquals("peitan didn't hel",result);
+        String result = Encryption.moveSingsRight("eitan didn't help",3);
+        assertEquals("elpeitan didn't h",result);
         
     }
     public void testAdd25(){
         
-        String result = Encryption.moveSingsRight("test the work");
-        assertEquals("ktest the wor",result);
+        String result = Encryption.moveSingsRight("test work",2);
+        assertEquals("krtest wo",result);
         
     }
     public void testAdd26(){
         
-        String result = Encryption.moveSingsRight("I don't know");
-        assertEquals("wI don't kno",result);
+        String result = Encryption.moveSingsRight("cbdjdv",1);
+        assertEquals("vcbdjd",result);
         
     }
     public void testAdd27(){
         
-        String result = Encryption.moveSingsRight("david cohen");
-        assertEquals("ndavid cohe",result);
+        String result = Encryption.moveSingsRight("david cohen",2);
+        assertEquals("endavid coh",result);
         
     }
     public void testAdd28(){
         
-        String result = Encryption.moveSingsRight("last one");
-        assertEquals("elast on",result);
+        String result = Encryption.moveSingsRight("last one now",3);
+        assertEquals("nowlast one ",result);
         
     }
     //test method 5
      @Test
     public void testAdd29(){
         
-        String result = Encryption.moveSingsRight("eitan didn't help");
-        assertEquals("itan didn't helpe",result);
+        String result = Encryption.moveSingsLeft("eitan didn't help",3);
+        assertEquals("an didn't helpeit",result);
         
     }
     public void testAdd30(){
         
-        String result = Encryption.moveSingsRight("test the work");
-        assertEquals("est the workt",result);
+        String result = Encryption.moveSingsLeft("test the",2);
+        assertEquals("st the te",result);
         
     }
     public void testAdd31(){
         
-        String result = Encryption.moveSingsRight("I don't know");
-        assertEquals(" don't knowI",result);
+        String result = Encryption.moveSingsLeft("fvfsdfd",1);
+        assertEquals("vfsdfdf",result);
         
     }
     public void testAdd32(){
         
-        String result = Encryption.moveSingsRight("david cohen");
-        assertEquals("avid cohend",result);
+        String result = Encryption.moveSingsLeft("fdv dff jska",3);
+        assertEquals(" dff jskafdv",result);
         
     }
     public void testAdd33(){
         
-        String result = Encryption.moveSingsRight("last one");
-        assertEquals("ast onel",result);
+        String result = Encryption.moveSingsLeft("last one",2);
+        assertEquals("st onela",result);
         
     }
 }
