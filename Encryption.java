@@ -74,28 +74,47 @@ public class Encryption
         return str;
     }
     // everyone except eitan
-    public static String moveSingsRight(String sentence) {
-        if (sentence.length() <= 1) {
-            return sentence;
-        }
-
+    public static String moveSingsRight(String sentence, int wordCount) {
         int len = sentence.length();
-        String lastChar = sentence.substring(len - 1);    
-        String rest = sentence.substring(0, len - 1);   
-
-        return lastChar + rest;
+        String afterMovment = "";
+        if (wordCount == 1){
+            String lastChar = sentence.substring(len - 1);
+            String rest1 = sentence.substring(0, len - 1);
+            afterMovment =  lastChar + rest1;
+        }
+        else if (wordCount == 2){
+            String lastChars1 = sentence.substring(len - 2);
+            String rest2 = sentence.substring(0, len - 2);
+            afterMovment =  lastChars1 + rest2;
+        }
+        else if (wordCount == 3){
+            String lastChars2 = sentence.substring(len - 3);
+            String rest3 = sentence.substring(0, len - 3);
+            afterMovment =  lastChars2 + rest3;
+        } 
+        return afterMovment;
     }
 
     //everyone except eitan
-    public static String moveSingsLeft(String sentence) {
-        if (sentence.length() <= 1) {
-            return sentence; 
+    public static String moveSingsLeft(String sentence,int wordCount) {
+        int len = sentence.length();
+        String afterMovment2 = "";
+        if (wordCount == 1){
+            String firstChar = sentence.substring(0, 1);
+            String rest1 = sentence.substring(1, len);
+            afterMovment2 =  rest1 + firstChar;
         }
-
-        String firstChar = sentence.substring(0, 1);    
-        String rest = sentence.substring(1);             
-
-        return rest + firstChar;
+        else if (wordCount == 2){
+            String firstChars1 = sentence.substring(0, 2);
+            String rest2 = sentence.substring(2, len);
+            afterMovment2 =  rest2 + firstChars1;
+        }
+        else if (wordCount == 3){
+            String firstChars2 = sentence.substring(0, 3);
+            String rest3 = sentence.substring(3, len);
+            afterMovment2 = rest3 + firstChars2;
+        } 
+        return afterMovment2;
     }
      //Fisher
     //doing the "if"s so that the code will run right (by order) and checking the inputs
@@ -104,6 +123,7 @@ public class Encryption
         System.out.println("Welcome to the Encryption / Decryption Program");
         System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
         int choice = reader.nextInt();
+        reader.nextLine();
         System.out.println("Enter up to 3 words sentence");
         String sentence = reader.nextLine();
         int wordsNum = wordsNum(sentence);
@@ -112,11 +132,11 @@ public class Encryption
             return;
         }
         String finalSentence = newPassword(sentence, wordsNum);
-        finalSentence = moveSingsLeft(sentence);
-        finalSentence = replace(sentence);
-        String firstSentence = oldPassword(sentence, wordsNum);
-        firstSentence = moveSingsRight(sentence);
-        finalSentence = restore(sentence);
+        finalSentence = moveSingsRight(finalSentence, wordsNum);
+        finalSentence = replace(finalSentence);
+        String firstSentence = restore(sentence);
+        firstSentence = moveSingsLeft(firstSentence, wordsNum);
+        firstSentence = oldPassword(firstSentence, wordsNum);
         if (choice == 1)
             System.out.println("The encrypted sentence: " + finalSentence);
         else if (choice == 2)
@@ -128,4 +148,3 @@ public class Encryption
 
      }
 }
-
