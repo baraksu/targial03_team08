@@ -57,6 +57,37 @@ public class Encryption
         str = str.replace('&','u' );
         return str;
     }
+     //Fisher
+    //doing the "if"s so that the code will run right (by order) and checking the inputs
+    public static void main(String[] args){
+                Scanner reader = new Scanner(System.in);
+        System.out.println("Welcome to the Encryption / Decryption Program");
+        System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
+        int choice = reader.nextInt();
+        System.out.println("Enter up to 3 words sentence");
+        String sentence = reader.nextLine();
+        int wordsNum = wordsNum(sentence);
+        if (wordsNum > 3){
+            System.out.println(sentence + " contains more than 3 words");
+            return;
+        }
+        String finalSentence = newPassword(sentence, wordsNum);
+        finalSentence = moveSingsLeft(sentence);
+        finalSentence = replace(sentence);
+        String firstSentence = oldPassword(sentence, wordsNum);
+        firstSentence = moveSingsRight(sentence);
+        finalSentence = restore(sentence);
+        if (choice == 1)
+            System.out.println("The encrypted sentence: " + finalSentence);
+        else if (choice == 2)
+            System.out.println("The decrypted sentence: " + firstSentence);
+        else{
+            System.out.println(choice + " is not a valid choice");
+            return;
+        }
+
+    
+
     
     public static void main(String[] args){
         
