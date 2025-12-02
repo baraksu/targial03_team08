@@ -1,9 +1,5 @@
-/**
- * Write a description of class Encryption here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.Scanner;
+
 public class Encryption
 {
     //Rearrange the sentence
@@ -47,7 +43,7 @@ public class Encryption
         return str;
     }
     
-   // muli
+    // muli
     public static String restore (String sentence){ // replace from signs to words
         String str = sentence;
         str = str.replace('0','o' );
@@ -86,14 +82,6 @@ public class Encryption
             return;
         }
 
-    
-
-    
-    public static void main(String[] args){
-        
-        System.out.println("Welcome to the Encryption / Decryption Program");
-        System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
-        
-    }
-    }
+     }
+}
 
