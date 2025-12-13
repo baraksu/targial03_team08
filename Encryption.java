@@ -24,19 +24,19 @@ public class Encryption
     //Rearrange the sentence
     //matan
     public static String newPassword(String password,int wordCount){
+        int space1 = password.indexOf(' ');
+        int space2 = password.indexOf(' ', space1 + 1);
         if (wordCount == 1){
         }
         else if (wordCount == 2){
-            String[] parts = password.split(" ");
-            String word1 = parts[0];
-            String word2 = parts[1];
+            String word1 = password.substring(0, space1);
+            String word2 = password.substring(space1 + 1);
             password = word2 +" "+ word1;
         }
         else{
-            String[] parts = password.split(" ");
-            String word1 = parts[0];
-            String word2 = parts[1];
-            String word3 = parts[2];
+            String word1 = password.substring(0, space1);
+            String word2 = password.substring(space1 + 1, space2);
+            String word3 = password.substring(space2 + 1);
             password = word3 +" "+ word1 +" "+ word2;
         }
         return password;
@@ -45,8 +45,17 @@ public class Encryption
     //Find how many words are in a sentence and what they are
     //matan
     public static int wordsNum(String password){
-        String[] parts = password.split(" ");
-        int wordCount = parts.length;
+        int wordCount = 1;
+        int len = password.length();
+        for (int i = 0 ; i < len ; i++){
+            char iChar = password.charAt(i);
+            if (iChar == ' '){
+                wordCount++;
+            }
+        }
+        if (password == ""){
+            wordCount = 0;
+        }
         return wordCount;
     }
     
