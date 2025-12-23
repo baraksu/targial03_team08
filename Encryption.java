@@ -9,7 +9,7 @@ public class Encryption
     }
     int space1 = password.indexOf(' ');
     int space2 = password.indexOf(' ', space1 + 1);
-    if (wordCount == 2) {
+    if (wordCount == 2) { 
         String word1 = password.substring(0, space1);
         String word2 = password.substring(space1 + 1);
         return word2 + " " + word1;
