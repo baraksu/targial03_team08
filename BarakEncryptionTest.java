@@ -7,7 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.InputStream;
 
-/**
+/** 
  * Unit tests for the Encryption class.
  * Tests cover encryption and decryption with 1, 2, and 3 words,
  * as well as invalid inputs.
